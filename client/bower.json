@@ -1,0 +1,20 @@
+{
+  "name": "yoda-client",
+  "description": "angular 2 app to display the data from botman",
+  "main": "index.js",
+  "authors": [
+    "Anoop-Goudar <anoop.a.goudar@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
