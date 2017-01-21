@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Online Products Subscription</a>
+    </div>
+
+    <div class="">
+      <ul class="nav navbar-nav">
+        <li><a href="#!/register">Login</a></li>
+        <li ng-class="{active: vm.menu ==='dashboard'}"><a href="#!/dashboard">Dashboard</a></li>
+        <li class="dropdown">
+          <a class="btn menulink" data-toggle="dropdown">
+            Products <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="#!/products">View Products</a></li>
+            <li><a>Subscribe Products</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
