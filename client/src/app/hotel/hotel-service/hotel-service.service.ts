@@ -28,7 +28,6 @@ export class HotelService {
   }
   private extractData(res: Response) {
     let body = res.json();
-    // console.log(body.open_requests);
     return body.open_requests || body.closed_requests || body.assigned_requests || { };
   }
   private handleError (error: Response | any) {

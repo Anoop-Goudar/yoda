@@ -4,7 +4,7 @@ import { HotelService } from '../hotel-service/hotel-service.service';
 @Component({
   selector: 'app-open-requests',
   templateUrl: './open-requests.component.html',
-  styleUrls: ['./open-requests.component.css']
+  styleUrls: ['./open-requests.component.scss']
 })
 export class OpenRequestsComponent implements OnInit {
 
@@ -13,11 +13,10 @@ export class OpenRequestsComponent implements OnInit {
     }
 
     ngOnInit() {
+      this.getOpenRequests();
+    }
+    getOpenRequests() {
       this.hotelService.getOpenRequests()
-                   .subscribe(success);
-      function success(data) {
-        this.openRequests = data;
-        console.log(this.openRequests);
-      }
+                   .subscribe(data => this.openRequests = data);
     }
 }
