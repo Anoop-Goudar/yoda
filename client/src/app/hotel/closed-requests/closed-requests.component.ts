@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HotelService } from '../hotel-service/hotel-service.service';
 
 @Component({
   selector: 'app-closed-requests',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClosedRequestsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  public closedRequests = [];
+  constructor(public hotelService: HotelService) {
   }
 
+  ngOnInit() {
+    this.hotelService.getClosedRequests()
+                 .subscribe(success);
+    function success(data) {
+      this.closedRequests = data;
+      console.log(this.closedRequests);
+    }
+  }
 }

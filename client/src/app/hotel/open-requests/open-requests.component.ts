@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HotelService } from '../hotel-service/hotel-service.service';
 
 @Component({
   selector: 'app-open-requests',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OpenRequestsComponent implements OnInit {
 
-  constructor() { }
+    public openRequests = [];
+    constructor(public hotelService: HotelService) {
+    }
 
-  ngOnInit() {
-  }
-
+    ngOnInit() {
+      this.hotelService.getOpenRequests()
+                   .subscribe(success);
+      function success(data) {
+        this.openRequests = data;
+        console.log(this.openRequests);
+      }
+    }
 }
