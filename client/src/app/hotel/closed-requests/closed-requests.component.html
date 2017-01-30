@@ -1,5 +1,24 @@
 <app-header></app-header>
 
-<p>
-  closed-requests works!
-</p>
+<div class="container">
+  <div class=" row row-header">
+    <div class="col-md-1"><h4>Request Number</h4></div>
+    <div class="col-md-2"><h4>Request Type</h4></div>
+    <div class="col-md-2"><h4>Name</h4></div>
+    <div class="col-md-1"><h4>Mobile Number</h4></div>
+    <div class="col-md-3"><h4>Request Message</h4></div>
+    <div class="col-md-1"><h4>Room Number</h4></div>
+    <div class="col-md-1"><h4>Time</h4></div>
+    <div class="col-md-1"><h4>Date</h4></div>
+  </div>
+  <div class="row" *ngFor="let request of closedRequests">
+    <div class="col-md-1">{{ request.request_no }}</div>
+    <div class="col-md-2">{{ request.request_type }}</div>
+    <div class="col-md-2">{{ request.name }}</div>
+    <div class="col-md-1">{{ request.mobile }}</div>
+    <div class="col-md-3">{{ request.text }}</div>
+    <div class="col-md-1">{{ request.room_number }}</div>
+    <div class="col-md-1">{{ request.time }}</div>
+    <div class="col-md-1">{{ request.date }}</div>
+  </div>
+</div>

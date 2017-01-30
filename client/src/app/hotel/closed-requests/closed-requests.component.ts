@@ -4,7 +4,7 @@ import { HotelService } from '../hotel-service/hotel-service.service';
 @Component({
   selector: 'app-closed-requests',
   templateUrl: './closed-requests.component.html',
-  styleUrls: ['./closed-requests.component.css']
+  styleUrls: ['./closed-requests.component.scss']
 })
 export class ClosedRequestsComponent implements OnInit {
 
@@ -13,11 +13,11 @@ export class ClosedRequestsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getClosedRequests();
+  }
+  getClosedRequests() {
     this.hotelService.getClosedRequests()
-                 .subscribe(success);
-    function success(data) {
-      this.closedRequests = data;
-      console.log(this.closedRequests);
-    }
+                 .subscribe(data => this.closedRequests = data);
+                 console.log(this.closedRequests);
   }
 }

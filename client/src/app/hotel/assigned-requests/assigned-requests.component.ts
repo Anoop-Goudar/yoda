@@ -4,7 +4,7 @@ import { HotelService } from '../hotel-service/hotel-service.service';
 @Component({
   selector: 'app-assigned-requests',
   templateUrl: './assigned-requests.component.html',
-  styleUrls: ['./assigned-requests.component.css']
+  styleUrls: ['./assigned-requests.component.scss']
 })
 export class AssignedRequestsComponent implements OnInit {
 
@@ -13,12 +13,12 @@ export class AssignedRequestsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getAssignedRequests();
+  }
+  getAssignedRequests() {
     this.hotelService.getAssignedRequests()
-                 .subscribe(success);
-    function success(data) {
-      this.assignedRequests = data;
-      console.log(this.assignedRequests);
-    }
+                 .subscribe(data => this.assignedRequests = data);
+                 console.log(this.assignedRequests);
   }
 
 }
