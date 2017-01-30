@@ -6,6 +6,9 @@ import { LoginHeaderComponent } from './login-header/login-header.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HotelService } from './hotel-service/hotel-service.service';
+import { OpenRequestsComponent } from './open-requests/open-requests.component';
+import { ClosedRequestsComponent } from './closed-requests/closed-requests.component';
+import { AssignedRequestsComponent } from './assigned-requests/assigned-requests.component';
 
 @NgModule({
   imports: [
@@ -21,6 +24,6 @@ import { HotelService } from './hotel-service/hotel-service.service';
   providers: [
     HotelService
   ],
-  declarations: [HeaderComponent, LoginHeaderComponent, LoginComponent, DashboardComponent]
+  declarations: [HeaderComponent, LoginHeaderComponent, LoginComponent, DashboardComponent, OpenRequestsComponent, ClosedRequestsComponent, AssignedRequestsComponent]
 })
 export class HotelModule { }
