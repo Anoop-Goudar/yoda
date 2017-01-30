@@ -8,9 +8,9 @@ import 'rxjs/add/operator/map';
 export class HotelService {
 
   constructor (private http: Http) {}
-  callService() {
-    console.log('service called');
-  }
+  // callService() {
+  //   console.log('service called');
+  // }
   getOpenRequests (): Observable<any> {
     return this.http.post('http://node-intelliserver.herokuapp.com/api/sheraton/open_requests', {})
                     .map(this.extractData)

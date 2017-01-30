@@ -13,7 +13,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.hotelService.callService();
+    // this.hotelService.callService();
   }
 
 }
