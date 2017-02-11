@@ -17,6 +17,6 @@ export class OpenRequestsComponent implements OnInit {
     }
     getOpenRequests() {
       this.hotelService.getOpenRequests()
-                   .subscribe(data => this.openRequests = data);
+                   .subscribe(data => this.openRequests = Array.isArray(data) ? data : []);
     }
 }

@@ -17,8 +17,7 @@ export class AssignedRequestsComponent implements OnInit {
   }
   getAssignedRequests() {
     this.hotelService.getAssignedRequests()
-                 .subscribe(data => this.assignedRequests = data);
-                 console.log(this.assignedRequests);
+                 .subscribe(data => this.assignedRequests = Array.isArray(data) ? data : []);
   }
 
 }

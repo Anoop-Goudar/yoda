@@ -21,4 +21,7 @@
     <div class="col-md-1">{{ request.time }}</div>
     <div class="col-md-1">{{ request.date }}</div>
   </div>
+  <div *ngIf="openRequests.length  < 1" class="no-data-found">
+    <h4>No data found</h4>
+  </div>
 </div>

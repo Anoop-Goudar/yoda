@@ -17,7 +17,6 @@ export class ClosedRequestsComponent implements OnInit {
   }
   getClosedRequests() {
     this.hotelService.getClosedRequests()
-                 .subscribe(data => this.closedRequests = data);
-                 console.log(this.closedRequests);
+                 .subscribe(data => this.closedRequests = Array.isArray(data) ? data : []);
   }
 }
